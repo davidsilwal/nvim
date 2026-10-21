@@ -107,16 +107,14 @@ install the matching runtime and mason will fetch the server on the next start.
 
 ## tmux integration
 
-`numToStr/Navigator.nvim` handles the navigation, tmux needs to forward the keys. Add this to
-your `~/.tmux.conf`:
+`numToStr/Navigator.nvim` moves the focus between Neovim and the neighbouring
+tmux pane with `<A-h/j/k/l>`. It does the tmux half itself -- it runs
+`tmux select-pane` and refuses to move while a pane is zoomed -- and it
+detects tmux on its own, so there is nothing to add to `tmux.conf`.
 
-```tmux
-set -g prefix C-a
-bind -n M-h send-keys -X select-pane -L
-bind -n M-j send-keys -X select-pane -D
-bind -n M-k send-keys -X select-pane -U
-bind -n M-l send-keys -X select-pane -R
-```
+What the tmux configuration does have is the usual `prefix + h/j/k/l` for
+moving between panes: the same gesture, for the focus that is in tmux rather
+than in the editor.
 
 ## System requirements
 
