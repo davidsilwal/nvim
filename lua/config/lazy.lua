@@ -45,7 +45,7 @@ require("lazy").setup({
   },
   install = {
     -- the colorscheme that LazyVim uses at startup (see lua/plugins/theme.lua)
-    colorscheme = { "tokyonight", "habamax" },
+    colorscheme = { "catppuccin", "habamax" },
   },
   -- check for plugin updates in the background
   checker = {
